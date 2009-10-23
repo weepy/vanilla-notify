@@ -44,7 +44,7 @@ $().ready(function() {
 })
 
 function escapeHTML(sometext){
- var re=/[(<>"'&]/g
+ var re=/[(<>]/g
  return sometext.replace(re, function(m){return replacechar(m)})
 }
 
