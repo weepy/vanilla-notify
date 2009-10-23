@@ -1,0 +1,64 @@
+<script src='jquery.js' ></script>
+<script src='vanilla-notify.js' ></script>
+
+<style>
+  input {display: block; margin-top: 1em;}
+  body {background: #111; color: #eee; font-family: arial; font-size: 16px;}
+  h1 {color: #F48; font-size: 20px;}
+  #buttons {font-size: 20px;}
+  pre {font-size:12px; margin-bottom: 3em;}
+</style>
+
+<style>
+  #notify { position: fixed; width: 12em; top: 1em; right: 1em; color: black; }
+  #notify li { margin:0em; line-height: 1em; margin-bottom: 1em; list-style: none; padding: 0.5em 1em; background: #ddd; opacity: 0.85; cursor: pointer;}
+  #notify .error  {background: #fcc;}
+  #notify .curvy { -moz-border-radius: 20px; -webkit-border-radius: 20px; border: 4px solid red; background: yellow; font-weight: bold; color: black;}
+  
+  
+</style>
+
+
+<script>
+var buttons = {
+  "Say hello": "{html: 'Hello'}",
+  "A bit more formally": "{html: '<h1>Greetings</h1><p>A pleasure to meet you</p>'}",
+  "Something went badly wrong": "{html: 'With class: error', klass: 'error' }",
+  "Curvy?": "{html: 'I know, I know, I said no showing off', klass: 'curvy' }",
+  "Sticky": "{html: 'I will be here for 7610.4 years! (unless you click me)', delay: 1e10 }"
+}
+
+$().ready(function() {
+  for(var i in buttons) {
+    var opts = buttons[ i ]
+      
+    var button = $("<input>").attr("type","submit").val(i).click(function() {
+      var opts = eval("(" + buttons[$(this).val()]+ ")")
+      $.notify(opts)
+    })
+
+    var pre = $("<pre>").html(escapeHTML(opts))
+    $("#buttons").append(button).append(pre)
+  }
+  
+})
+
+function escapeHTML(sometext){
+ var re=/[(<>"'&]/g
+ return sometext.replace(re, function(m){return replacechar(m)})
+}
+
+function replacechar(match){
+ if (match=="<")
+  return "&lt;"
+ else if (match==">")
+  return "&gt;"
+}
+
+</script>
+
+<h1>Vanilla Notify</h1>
+
+<div id=buttons>
+  
+</div>
