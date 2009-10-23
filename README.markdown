@@ -58,5 +58,4 @@ Tested in
 
 * Firefox 3.5
 * Safari 4
-* IE 6, 7, 8
 
