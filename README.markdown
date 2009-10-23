@@ -49,7 +49,7 @@ Links
 * [Javascript File](http://github.com/weepy/vanilla-notify/raw/master/vanilla-notify.js)
 * [Github Project](http://github.com/weepy/vanilla-notify)
 * [Issue Tracker](http://github.com/weepy/vanilla-notify/issues)
-* [Blog Post](http://blog.parkerfox.co.uk/2009/10/07/jquery-sprite-factory/)
+* [Blog Post](http://blog.parkerfox.co.uk/2009/10/23/growlesque-plugin-in-20-lines-of-code/)
 
 Compatibility
 ----
