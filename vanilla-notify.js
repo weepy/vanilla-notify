@@ -40,7 +40,7 @@ By Jonah Fox
 })(jQuery)
 
 /* CSS
-#notify { position: fixed; width: 12em; top: 1em; right: 1em; color: black; }
+#notify { position: absolute; position: fixed; width: 12em; top: 1em; right: 1em; color: black; }
 #notify li { margin:0em; line-height: 1em; margin-bottom: 1em; list-style: none; padding: 0.5em 1em; background: #ddd; opacity: 0.85; cursor: pointer;}
 #notify .error  {background: #fcc;}
 
