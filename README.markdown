@@ -15,10 +15,9 @@ Installation
 * include the following CSS somewhere
 
 <pre>
-  #notify { position: fixed; width: 10em; top: 1em; right: 1em; color: black; }
-  #notify li { margin:0em; line-height: 1em; margin-bottom: 1em; list-style: none; padding: 0.5em; background: #ddd; opacity: 0.85;}
-  #notify .error  {background: #fcc;}
-  #notify .notice {background: #cfc;}  
+#notify { position: absolute; position: fixed; width: 12em; top: 1em; right: 1em; color: black; }
+#notify li { margin:0em; line-height: 1em; margin-bottom: 1em; list-style: none; padding: 0.5em 1em; background: #ddd; opacity: 0.85; cursor: pointer;} 
+#notify .error  {background: #fcc;}
 </pre>
 
 Calling
@@ -26,19 +25,19 @@ Calling
 
 Uses the semi-standard $.notify
 
-<pre> $.notify({html: 'Hello'}) </pre>
+<pre> $.notify('Hello') </pre>
 
 Can put any html inside
 
-<pre> $.notify({html: '<h1>Hello</h1><p><img='myicon.icon' />Hi there </p>'}) </pre>
+<pre> $.notify('<h1>Hello</h1><p><img='myicon.icon' />Hi there </p>') </pre>
 
 There is also a klass option, which adds the klass to the notification. This class can be used to style
 
-<pre> $.notify({html: 'With class: error', klass: 'error' }) </pre>
+<pre> $.notify('With class: error', {klass: 'error' }) </pre>
 
 There's also a delay, which defaults to 5000. It's the time before the notification fades out. Set it to something big to make it sticky.
 
-<pre> $.notify({html: "I'll be here for 7610.4 years!", delay: 1e10 }) </pre>
+<pre> $.notify("I'll be here for 7610.4 years!", { delay: 1e10 }) </pre>
 
 
 
